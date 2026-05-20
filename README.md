@@ -29,9 +29,10 @@ conan remote add gitlab-cloudsync https://gitlab.com/api/v4/projects/15425736/pa
 libcloudsync/0.1.0@jothepro/release
 ```
 
-If you don't want to build & run tests when building from source, set the [CONAN_RUN_TESTS](https://docs.conan.io/en/latest/reference/env_vars.html#conan-run-tests) variable:
+If you don't want to build & run tests when building from source, set the [skip_test](https://docs.conan.io/2/reference/config_files/global_conf.html#tools-configurations) configuration:
 ```sh
-conan install -if build --build missing . -e CONAN_RUN_TESTS=0
+conan profile detect
+conan install -of build --build=missing . -c tools.build:skip_test=True
 ```
 
 ## Quick start
@@ -71,7 +72,7 @@ try {
 
 ### Build Requirements
 
-- Conan >= 1.40
+- Conan >= 2.0
 - CMake >= 3.15
 - Doxygen >= 1.9.1 (optional)
 
@@ -80,12 +81,11 @@ try {
 - **Commandline**:
   ```sh
   # install dependencies with Conan
-  conan install -if build --build missing .
-  # configure, build & test with Conan
-  conan build -bf build .
-  # or configure & build directly with CMake
-  cmake -S . -B build && cmake --build build
-  # and execute the tests with ctest
+  conan install -of build --build=missing .
+  # configure & build with CMake (using generated toolchain)
+  cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+  cmake --build build
+  # execute the tests with ctest
   ctest --test-dir build/test
   ```
 - **Clion**: Install the [Conan Plugin](https://plugins.jetbrains.com/plugin/11956-conan) before configuring & building the project as usual.
@@ -94,7 +94,7 @@ try {
 
 This library uses [Catch2](https://github.com/catchorg/Catch2) for testing. The Unit-tests are defined in `test`.
 
-- **Commandline**: To run just the unit-tests, you can run `conan build -bf build --test .`.
+- **Commandline**: To run just the unit-tests, run `ctest --test-dir build/test`.
 - **CLion**: Execute the `CloudSyncTest` target
 
 ### Integration Test

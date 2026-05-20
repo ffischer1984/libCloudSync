@@ -2,7 +2,7 @@
 
 #include "request/Request.hpp"
 #include "shared_ptr_mock.hpp"
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <string>
 #include <unordered_map>
 #include <vector>

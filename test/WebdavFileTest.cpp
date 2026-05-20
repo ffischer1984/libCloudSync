@@ -4,7 +4,7 @@
 #include "request/Request.hpp"
 #include "macros/request_mock.hpp"
 #include "macros/basic_auth_mock.hpp"
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <fakeit.hpp>
 #include <sstream>
 

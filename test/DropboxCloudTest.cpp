@@ -3,7 +3,7 @@
 #include "macros/request_mock.hpp"
 #include "macros/shared_ptr_mock.hpp"
 #include "macros/oauth_mock.hpp"
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <fakeit.hpp>
 
 using namespace fakeit;

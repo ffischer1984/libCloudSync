@@ -7,7 +7,7 @@
 #include "nextcloud/NextcloudCloud.hpp"
 #include "onedrive/OneDriveCloud.hpp"
 #include "webdav/WebdavCloud.hpp"
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <fakeit.hpp>
 #include <memory>
 

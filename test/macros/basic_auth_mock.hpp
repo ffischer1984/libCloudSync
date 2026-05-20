@@ -1,7 +1,7 @@
 #pragma once
 
 #include "shared_ptr_mock.hpp"
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include "credentials/BasicCredentialsImpl.hpp"
 
 #define BASIC_AUTH_MOCK(usernamevalue, passwordvalue)                                                                  \
