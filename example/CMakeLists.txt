@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(CloudSyncExample)
 
-find_package(cxxopts REQUIRED)
+find_package(cxxopts CONFIG REQUIRED)
 
 add_executable(CloudSyncExample main.cpp)
 

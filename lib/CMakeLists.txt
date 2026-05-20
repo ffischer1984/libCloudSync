@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.15)
 project(CloudSync)
 
 # dependencies
-find_package(nlohmann_json REQUIRED)
-find_package(pugixml REQUIRED)
-find_package(CURL REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+find_package(pugixml CONFIG REQUIRED)
+find_package(CURL CONFIG REQUIRED)
 
 set(INCLUDE
     include/CloudSync/CloudFactory.hpp
@@ -151,7 +151,7 @@ target_link_libraries(CloudSync
     PUBLIC
         nlohmann_json::nlohmann_json
         pugixml::pugixml
-        CURL::CURL
+        CURL::libcurl
 )
 
 set_target_properties (CloudSync PROPERTIES

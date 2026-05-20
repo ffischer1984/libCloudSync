@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 
 project(CloudSyncTest)
 
-find_package(Catch2 MODULE REQUIRED)
-find_package(fakeit MODULE REQUIRED)
+find_package(Catch2 CONFIG REQUIRED)
+find_package(fakeit CONFIG REQUIRED)
 
 include(Catch)
 
